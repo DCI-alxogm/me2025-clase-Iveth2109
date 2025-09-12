@@ -1,1 +1,1 @@
-
+En estos ejercicios comparando los métodos de bisección y falsa posición, para el ejercicio 1, es mejor usar el método de falsa posición, ya que aparte de usar menos iteraciones tambén fue el más cercano a 0, en cambio en el ejercicio 2, es mejor el método de bisección, ya que usa menos iteciones y se aproxima más al 0
