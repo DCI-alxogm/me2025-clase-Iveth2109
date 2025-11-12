@@ -1,0 +1,94 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMbLvsGHC1nY//zhFqOaIpu",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DCI-alxogm/me2025-clase-Iveth2109/blob/main/Ejemplo_simplex.ipynb/Semana%2015\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "id": "5XNVzzSPGFl3"
+      },
+      "outputs": [],
+      "source": [
+        "from scipy.optimize import linprog\n",
+        "C = [-150, -175]\n",
+        "A_ub = [[7, 11],\n",
+        "    [10, 8],[1,0],[0,1]]\n",
+        "\n",
+        "b_ub = [77, 80,9,6]\n",
+        "\n",
+        "x1_bounds = (0, None)\n",
+        "x2_bounds = (0, None)\n",
+        "bounds = [x1_bounds, x2_bounds]\n",
+        "\n",
+        "result = linprog(C, A_ub=A_ub, b_ub=b_ub, bounds=bounds, method='highs')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "result"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kr8Ush9zHxnl",
+        "outputId": "193a578d-ea3b-4ab8-d8fe-a45fd696e09a"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)\n",
+              "        success: True\n",
+              "         status: 0\n",
+              "            fun: -1413.8888888888887\n",
+              "              x: [ 4.889e+00  3.889e+00]\n",
+              "            nit: 2\n",
+              "          lower:  residual: [ 4.889e+00  3.889e+00]\n",
+              "                 marginals: [ 0.000e+00  0.000e+00]\n",
+              "          upper:  residual: [       inf        inf]\n",
+              "                 marginals: [ 0.000e+00  0.000e+00]\n",
+              "          eqlin:  residual: []\n",
+              "                 marginals: []\n",
+              "        ineqlin:  residual: [ 0.000e+00  0.000e+00  4.111e+00  2.111e+00]\n",
+              "                 marginals: [-1.019e+01 -7.870e+00 -0.000e+00 -0.000e+00]\n",
+              " mip_node_count: 0\n",
+              " mip_dual_bound: 0.0\n",
+              "        mip_gap: 0.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 15
+        }
+      ]
+    }
+  ]
+}
