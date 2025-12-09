@@ -1,1 +1,1 @@
-
+Como ya sabemos, el método de Rungue Kutta de segundo orden tiene un error mayor que Rungue Kutta de cuarto orden, es por eso que se tiene que usar un delta t menor, ya que al tener tiempos más pequeños, se disminuye el error acumulado y se obtienen una predicción más precisa de la concentración como el de cuarto orden, sin embargo, para hacer este cambio del paso del tiempo, se ocupan más iteraciones para el de segundo orden, entonces para RK2 delta t debe de ser 0.01 con 2500 iteraciones, mientras que RK4 se utiliza un delta t de 0.1 y 250 iteraciones.
